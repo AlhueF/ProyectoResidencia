@@ -15,13 +15,25 @@ print(unique_ID)
 len(unique_ID)
 
 ###Aplicado a distintas gestiones, reduce los tiempos, extraer sólo algunos datos
+
 ####Para crear un usuario dentro de Ulysses Cloud necesito sólo algunos de los datos: Nombre, Apellido, DNI/Pasaporte, País 
 y asignarlo a la variable huésped
 
 huésped = df[['Nombre','Apellido','DNI/Pasaporte', 'País']]
 huésped
 
-Con lo cual ya se puede generar el usuario de los huéspedes en el sistema. 
-Para analizar datos sobre qué países predominan, si hay más huéspedes femeninos que masculinos, y a qué universidad o centro asistirán.
+Con lo cual ya se puede generar el usuario de los huéspedes en el sistema y crear una reserva. 
+
+####Permite analizar datos sobre qué países predominan, si hay más huéspedes femeninos que masculinos, y a qué universidad o centro asistirán.
+
 reserva = df[['Nombre','Apellido', 'País', 'Género', 'Mes de Llegada', 'Mes de Salida']]
 reserva
+
+####Permite identificar edades
+
+Nombre, Apellido y Fecha de nacimiento:
+df.iloc[0:14, 0:3]
+
+####Simplifica la extracción de datos de contacto:
+df.loc[0:14,'Nombre':'Teléfono de Urgencias']
+
