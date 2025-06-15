@@ -64,21 +64,27 @@ Si quiero obtener los datos de Raúl Sosa y John Perez puedo hacerlo rápidament
 
 print(df.iloc[2])  
 print(df.loc[1])    
+
 Si quiero obtener los valores únicos de ID
 unique_ID = df['DNI/Pasaporte'].unique()
 print(unique_ID)
+
 Si quiero saber cuántas solicitudes hay, lo cual informamos una vez a la semana:
 len(unique_ID)
-Para crearle un usuario dentro de Ulysses Cloud necesito sólo algunos de esos datos. 
 
-Quiero extraer solo Nombre, Apellido, DNI/Pasaporte, País y asignarlo a la variable huésped
+Para crearle un usuario dentro de Ulysses Cloud necesito sólo algunos de esos datos. 
+Quiero extraer solo Nombre, Apellido, DNI/Pasaporte, País y asignarlo a la variable huésped:
 
 huésped = df[['Nombre','Apellido','DNI/Pasaporte', 'País']]
 huésped
-Con lo cual ya puedo generarles el usuario a los huéspedes en el sistema (aún no tienen una reserva asignada, ya que son solicitantes por el momento no sabemos si habrá disponibilidad o no).
+
+Con lo cual ya puedo generarles el usuario a los huéspedes en el sistema y crear una reserva.
+
 Para analizar datos sobre qué países predominan, si hay más huéspedes femeninos que masculinos, y a qué universidad o centro asistirán.
+
 reserva = df[['Nombre','Apellido', 'País', 'Género', 'Mes de Llegada', 'Mes de Salida']]
 reserva
+
 Supongamos que sólo quiero Nombre, Apellido y Fecha de nacimiento:
 df.iloc[0:14, 0:3]
 Hay datos que sólo servirán como datos de contacto, los podemos filtrar:
