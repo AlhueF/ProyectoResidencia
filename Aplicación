@@ -1,0 +1,27 @@
+##Funcionalidad
+
+###Para obtener los nombres de los solicitantes:
+print(df['Nombre']) 
+
+###Para obtener los datos de Raúl Sosa y John Perez puedo hacerlo rápidamente mediante el índice:
+print(df.iloc[2])  
+print(df.loc[1])    
+
+###Para obtener los valores únicos de ID
+unique_ID = df['DNI/Pasaporte'].unique()
+print(unique_ID)
+
+###Para saber cuántas solicitudes hay, lo cual informamos una vez a la semana:
+len(unique_ID)
+
+###Aplicado a distintas gestiones, reduce los tiempos, extraer sólo algunos datos
+####Para crear un usuario dentro de Ulysses Cloud necesito sólo algunos de los datos: Nombre, Apellido, DNI/Pasaporte, País 
+y asignarlo a la variable huésped
+
+huésped = df[['Nombre','Apellido','DNI/Pasaporte', 'País']]
+huésped
+
+Con lo cual ya se puede generar el usuario de los huéspedes en el sistema. 
+Para analizar datos sobre qué países predominan, si hay más huéspedes femeninos que masculinos, y a qué universidad o centro asistirán.
+reserva = df[['Nombre','Apellido', 'País', 'Género', 'Mes de Llegada', 'Mes de Salida']]
+reserva
