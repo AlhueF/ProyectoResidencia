@@ -32,47 +32,27 @@ La gestión de solicitudes de admisión se ve afectada por varios desafíos:
 -Disminuir la tasa de errores relacionados con los campos del formulario.
 -Generar informes y dashboards para un mejor análisis de datos.
 
-
-
-Separamos los formularios de los solicitantes en dos categorías:
-
-Curso 2024/2025 (del 01/09/2024 al 30/06/2025)
-
-Curso 2025/2026 (del 01/09/2025 al 30/06/2026)
-
-Cargamos los datos de los Formularios en Excel
-Uno con las solicitudes del Curso 2024/2025
-Otro con las solicitudes del Curso 2025/2026
-
-En este momento del año estamos trabajando en las solicitudes y admisiones del próximo curso. Respondemos a cada uno de los formularios recibidos, escribimos correo por correo lo cual implica mucha pérdida de tiempo.
-
-Sería óptimo trabajar con datos limpios desde el primer momento. Algunos patrones repetitivos identificados:
-
-Cuando completan en el el Formulario el campo “Dirección”, no coincide el formato. Algunos ponen solo el nombre de la ciudad, otros calle, numeración, manzana, código postal, otros ponen una referencia ( Ej. al lado de Sagrada Familia). Cambiaría el Formulario de tal modo que la dirección escrita deba ser tal como aparece en Google Maps, es decir, una dirección válida.
-
-En los campos “Fecha de Entrada” y “Fecha de salida” lo ideal sería definir el formato en el mismo formulario para evitar que utilicen algunos str (ej. “JUNIO”, “verano”, otros utilizan este formato: 01-02-25, otros: 01/02/2025, otros en formato estadounidense, lo cual además genera confusiones sobre todo en meses como Enero y febrero que si lo han puesto en formato estadounidense indicaría otra fecha que también podría ser válida).
-
-En “Teléfono” y “Teléfono de emergencia” Aplicaría una opción de prefijo que sea seleccionable y luego que escriban el número, para que quede en el mismo formato.
-
-Al no ser claro el formulario desde el primer momento, en muchos casos tenemos que contactar a los emisores para aclarar dudas, genera ineficiencias en el proceso de recolección de datos, ya que su interpretación a menudo requiere tiempo adicional.
-
-3.Objetivos
-El objetivo general
-El objetivo principal de este proyecto es  utilizar Python como herramienta para optimizar y automatizar los procesos de gestión de solicitudes y admisión para reducir la carga de trabajo manual y mejorar la eficiencia operativa del departamento de Front Desk en Residencia Onix.
-
-Objetivos específicos
--Identificar tareas manuales y repetitivas del proceso de admisión que son susceptibles de automatización.
--Implementar soluciones basadas en Python para integrar la información procesada con los sistemas de gestión existentes, reduciendo la necesidad de transcripción manual.
--Reducir tiempos promedios de procesamiento de cada solicitud.
--Disminuir la tasa de errores relacionados a los campos del Formulario.
--Generar informes y dashboards.
-
-4. Aplicación en el procesamiento de solicitudes del próximo curso
-Los datos de los solicitantes están cargados en Excel (“Formularios2025-2026.txt”).
-
+##Aplicación
+Este proyecto demuestra cómo se pueden procesar los datos de los solicitantes utilizando Pandas en Python.
 Para garantizar la privacidad y cumplir con las normativas de protección de datos, los datos empleados son ficticios, no corresponden a información real.
 
-Desde Jupyter importé la librería de pandas
+##Requisitos
+Python
+Librería Pandas (pip install pandas)
+Archivo CSV con los datos de los formularios (ej. Formularios2025-2026.csv.csv)
+###Su aplicación permitió:
+-Cargar y manipular datos desde archivos CSV.
+-Acceder rápidamente a registros específicos (ej. por índice o nombre).
+-Obtener valores únicos de campos (ej. DNI/Pasaporte).
+-Extraer subconjuntos de datos necesarios para tareas específicas, como:
+Creación de usuarios en Ulysses Cloud (campos: Nombre, Apellido, DNI/Pasaporte, País).
+-Análisis demográfico (País, Género, Universidad o centro).
+-Extracción veloz de la información relevante para crear reservas (campos: Nombre, Apellido, País, Género, Mes de Llegada, Mes de Salida).
+-Creación de listas de datos de contacto (campos: Nombre, Apellido, Teléfono, Correo Electrónico).
+
+Este enfoque permite trabajar con datos limpios desde el primer momento, sentando las bases para una gestión de solicitudes más eficiente.
+
+##Instalación
 !pip install pandas
 import pandas as pd
 import pandas as pd
