@@ -1,4 +1,5 @@
 #PYTHON PARA OPTIMIZACIÓN DE PROCESOS DE ADMISIÓN Y  TAREAS DE GESTIÓN DE SOLICITUDES EN RESIDENCIA DE ESTUDIANTES
+
 ##Descripción general
 Trabajo en una residencia de estudiantes, cubriendo el puesto de Recepcionista/Front Desk. 
 
@@ -8,6 +9,19 @@ Lo que los diferencia es que para hospedarse en Onix, es requisito formar parte 
 Hay distintos tipos de estancia: de día (entre una  y seis noches), semanal (siete  noches), mes (entre uno y tres meses) y estancias de curso (más de 3 meses).
 
 Dependiendo el tipo de estancia será el procedimiento a seguir para formalizar la reserva.
+
+##Estructura
+
+ProyectoResidencia/
+|
+|___ .git/
+|___ venv/
+|__src/
+| |__main.py     
+|  |__Formularios2025-2026.csv.csv
+|___.gitognore
+|___README.md
+|__requirements.txt
 
 ##Problema
 
@@ -40,6 +54,7 @@ Para garantizar la privacidad y cumplir con las normativas de protección de dat
 Python
 Librería Pandas (pip install pandas)
 Archivo CSV con los datos de los formularios (ej. Formularios2025-2026.csv.csv)
+
 ###Su aplicación permitió:
 -Cargar y manipular datos desde archivos CSV.
 -Acceder rápidamente a registros específicos (ej. por índice o nombre).
@@ -50,26 +65,24 @@ Creación de usuarios en Ulysses Cloud (campos: Nombre, Apellido, DNI/Pasaporte,
 -Extracción veloz de la información relevante para crear reservas (campos: Nombre, Apellido, País, Género, Mes de Llegada, Mes de Salida).
 -Creación de listas de datos de contacto (campos: Nombre, Apellido, Teléfono, Correo Electrónico).
 
-Este enfoque permite trabajar con datos limpios desde el primer momento, sentando las bases para una gestión de solicitudes más eficiente.
-
 ##Instalación
 !pip install pandas
 import pandas as pd
 import pandas as pd
 df = pd.read_csv('Formularios2025-2026.csv.csv')
 
-Si quiero obtener los nombres de los solicitantes:
+##Tareas simplificadas
+Obtención de los nombres de los solicitantes:
 print(df['Nombre']) 
-Si quiero obtener los datos de Raúl Sosa y John Perez puedo hacerlo rápidamente mediante:
 
-print(df.iloc[2])  
+Obtención de datos de solicitantes a través del índice:
 print(df.loc[1])    
 
-Si quiero obtener los valores únicos de ID
+Para obtener los valores únicos de ID
 unique_ID = df['DNI/Pasaporte'].unique()
 print(unique_ID)
 
-Si quiero saber cuántas solicitudes hay, lo cual informamos una vez a la semana:
+Para saber cuántas solicitudes hay, lo cual informamos una vez a la semana:
 len(unique_ID)
 
 Para crearle un usuario dentro de Ulysses Cloud necesito sólo algunos de esos datos. 
@@ -85,11 +98,24 @@ Para analizar datos sobre qué países predominan, si hay más huéspedes femeni
 reserva = df[['Nombre','Apellido', 'País', 'Género', 'Mes de Llegada', 'Mes de Salida']]
 reserva
 
-Supongamos que sólo quiero Nombre, Apellido y Fecha de nacimiento:
+Para análisis etarios (Nombre, Apellido y Fecha de nacimiento)
 df.iloc[0:14, 0:3]
-Hay datos que sólo servirán como datos de contacto, los podemos filtrar:
+
+Para obtener rápidamente datos de contacto:
 df.loc[0:14,'Nombre':'Teléfono de Urgencias']
 
-Necesito sólo Nombre, Apellido y Número de teléfono para agendarlos en WhatsApp.
 contacto = df[['Nombre','Apellido', 'Teléfono']]
 contacto
+
+##Autora
+
+Alhue Fernandez Quiroga
+
+##Licencia
+
+Uso Educativo
+
+##Notas
+
+Se puede ampliar la librería añadiendo nuevas funciones para otras gestiones.
+Si tienes alguna duda, consulta o sugerencia, te invito un issue en el repositorio.
