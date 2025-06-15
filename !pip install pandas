@@ -2,3 +2,5 @@
 import pandas as pd
 import pandas as pd
 df = pd.read_csv('Formularios2025-2026.csv.csv')
+
+pip install requests
