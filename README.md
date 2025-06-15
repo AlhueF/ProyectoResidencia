@@ -1,6 +1,5 @@
-# ProyectoRecidencia
-PYTHON PARA OPTIMIZACIÓN DE PROCESOS DE ADMISIÓN Y  TAREAS DE GESTIÓN DE SOLICITUDES EN RESIDENCIA DE ESTUDIANTES
-1.Resumen
+#PYTHON PARA OPTIMIZACIÓN DE PROCESOS DE ADMISIÓN Y  TAREAS DE GESTIÓN DE SOLICITUDES EN RESIDENCIA DE ESTUDIANTES
+##Descripción general
 Trabajo en una residencia de estudiantes, cubriendo el puesto de Recepcionista/Front Desk. 
 
 El funcionamiento del alojamiento es similar a Hoteles y Hostels en cuanto a la gestión de reservas, disponibilidad, ocupación, departamentos de limpieza y mantenimiento.
@@ -10,37 +9,30 @@ Hay distintos tipos de estancia: de día (entre una  y seis noches), semanal (si
 
 Dependiendo el tipo de estancia será el procedimiento a seguir para formalizar la reserva.
 
-2.Problema
+##Problema
 
-Todas las solicitudes llegan a través del correo, es decir, el primer contacto con los interesados consiste en que completen el primer paso, que es rellenar un formulario en la página web.
-                                                                               (web.https://www.residenciaonix.com/formulario)
+Este proyecto se enfoca en la optimización de los procesos de admisión y gestión de solicitudes en un alojamiento de estudiantes (Residencia Onix). Actualmente, estas tareas son manuales y repetitivas, generando ineficiencias y pérdida de tiempo. La solución propuesta utiliza Python, específicamente la librería Pandas, para automatizar la extracción, limpieza y procesamiento de datos de los formularios de solicitud, buscando reducir la carga de trabajo, mejorar la calidad de los datos y agilizar la comunicación con los solicitantes
+
+##Problema Identificado
+
+La gestión de solicitudes de admisión se ve afectada por varios desafíos:
+-Recepción de Solicitudes: Los formularios web llegan a una dirección de correo general, perdiéndose entre otros emails y dificultando su seguimiento.
+-Procesamiento Manual: La impresión, clasificación física y transcripción manual de datos a hojas de cálculo Excel consume mucho tiempo.
+-Comunicación Ineficiente: La respuesta individualizada a cada solicitud es un proceso manual y lento.
+-Calidad de Datos: El formato inconsistente en campos como "Dirección", "Fecha de Entrada/Salida" y "Teléfono" en el formulario web requiere aclaraciones manuales, generando ineficiencias en la recolección de datos.
+
+##Objetivos del Proyecto
+
+###El objetivo general es utilizar Python para optimizar y automatizar los procesos de gestión de solicitudes y admisión, reduciendo la carga de trabajo manual y mejorando la eficiencia operativa del departamento de Front Desk.
+
+###Objetivos específicos:
+-Identificar tareas manuales y repetitivas susceptibles de automatización.
+-Implementar soluciones basadas en Python para integrar la información procesada con los sistemas de gestión existentes.
+-Reducir el tiempo promedio de procesamiento por solicitud.
+-Disminuir la tasa de errores relacionados con los campos del formulario.
+-Generar informes y dashboards para un mejor análisis de datos.
 
 
-El formulario expone los siguientes datos de los solicitantes:
-
-Nombre
-Primer Apellido
-Segundo Apellido
-Fecha de nacimiento
-Género
-Nro de DNI o Pasaporte
-Dirección
-País
-Código Postal
-Provincia
-Localidad
-Teléfono
-Teléfono para urgencias
-Correo electrónico
-Mes de llegada
-Mes de salida
-Curso
-Estudios que realizarás
-Universidad o centro
-
-Una vez lo envían, nos llega a la misma dirección de correo que se utiliza para cualquier consulta de frontdesk, lo cual deriva a que se pierdan entre Spams, Ofertas, consultas de información general, pedidos, albaranes, archivos que nos envían para imprimir, etc. Una posible solución a esto sería que los formularios lleguen a otra dirección de correo electrónico creada específicamente para las solicitudes.
-
-En cuanto los recibimos, los imprimimos y separamos en carpetas físicas de acuerdo a lo que hayan completado en el campo “Curso” del formulario.
 
 Separamos los formularios de los solicitantes en dos categorías:
 
