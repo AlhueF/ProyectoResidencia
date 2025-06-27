@@ -1,1 +1,170 @@
+import datetime
+
+# Listas para almacenar solicitantes y reservas
+solicitantes = []
+reservas = []
+
+# Contadores de IDs
+contador_solicitantes = 1
+contador_reservas = 1
+
+# Función para registrar un nuevo solicitante
+def registrar_solicitante():
+    global contador_solicitantes
+    print("\n=== REGISTRO DE NUEVO SOLICITANTE ===")
+    nombre = input("Ingrese nombre: ")
+    apellidos = input("Ingrese apellidos: ")
+    email = input("Ingrese email: ")
+    
+    # Validar email único
+    for s in solicitantes:
+        if s['email'] == email:
+            print("Error: El email ya está registrado.")
+            return
+
+    telefono = input("Ingrese teléfono (opcional): ")
+    direccion = input("Ingrese dirección (opcional): ")
+    fecha_registro = datetime.date.today().strftime("%d/%m/%Y")
+
+    solicitante = {
+        "id": f"SOL{contador_solicitantes:03}",
+        "nombre": nombre,
+        "apellidos": apellidos,
+        "email": email,
+        "telefono": telefono,
+        "direccion": direccion,
+        "fecha_registro": fecha_registro
+    }
+
+    solicitantes.append(solicitante)
+    print(f"Solicitante registrado exitosamente con ID: {solicitante['id']}")
+    contador_solicitantes += 1
+
+# Función para buscar solicitante por email o nombre
+def buscar_solicitante():
+    print("\n=== BUSCAR SOLICITANTE ===")
+    criterio = input("Buscar por: 1. Email | 2. Nombre: ")
+
+    if criterio == '1':
+        email = input("Ingrese email: ")
+        for s in solicitantes:
+            if s['email'] == email:
+                print("--- SOLICITANTE ENCONTRADO ---")
+                print(s)
+                return
+        print("Solicitante no encontrado.")
+
+    elif criterio == '2':
+        nombre = input("Ingrese nombre: ")
+        for s in solicitantes:
+            if s['nombre'].lower() == nombre.lower():
+                print("--- SOLICITANTE ENCONTRADO ---")
+                print(s)
+                return
+        print("Solicitante no encontrado.")
+
+    else:
+        print("Opción no válida.")
+
+# Función para crear una reserva
+def crear_reserva():
+    global contador_reservas
+    print("\n=== CREAR RESERVA ===")
+    email = input("Ingrese email del solicitante: ")
+
+    for s in solicitantes:
+        if s['email'] == email:
+            descripcion = input("Ingrese descripción de la estancia: ")
+            monto = float(input("Ingrese monto total: "))
+            if monto < 0:
+                print("Error: El monto debe ser positivo.")
+                return
+            print("Seleccione estado: 1. Pendiente | 2. Confirmada | 3. Cancelada")
+            estado_opcion = input("Estado: ")
+
+            estado = "Pendiente"
+            if estado_opcion == '2':
+                estado = "Confirmada"
+            elif estado_opcion == '3':
+                estado = "Cancelada"
+
+            reserva = {
+                "numero_reserva": f"RES{contador_reservas:03}",
+                "email_solicitante": email,
+                "descripcion": descripcion,
+                "monto": monto,
+                "estado": estado,
+                "fecha_reserva": datetime.date.today().strftime("%d/%m/%Y")
+            }
+
+            reservas.append(reserva)
+            print(f"Reserva creada exitosamente con número: {reserva['numero_reserva']}")
+            contador_reservas += 1
+            return
+
+    print("Error: El solicitante no existe.")
+
+# Función para mostrar todos los solicitantes
+def mostrar_solicitantes():
+    print("\n=== LISTA DE SOLICITANTES ===")
+    for s in solicitantes:
+        print(s)
+    print(f"Total de solicitantes: {len(solicitantes)}")
+
+# Función para mostrar las reservas de un solicitante
+def mostrar_reservas():
+    print("\n=== RESERVAS DE UN SOLICITANTE ===")
+    email = input("Ingrese email del solicitante: ")
+    reservas_solicitante = [r for r in reservas if r['email_solicitante'] == email]
+
+    if reservas_solicitante:
+        for r in reservas_solicitante:
+            print(r)
+        total = sum(r['monto'] for r in reservas_solicitante)
+        print(f"Total reservado: {total}")
+    else:
+        print("No se encontraron reservas para este solicitante.")
+
+# Función para resumen general
+def resumen():
+    print("\n=== RESUMEN GENERAL ===")
+    print(f"Total de solicitantes: {len(solicitantes)}")
+    print(f"Total de reservas: {len(reservas)}")
+    total_monto = sum(r['monto'] for r in reservas)
+    print(f"Monto total reservado: {total_monto}")
+
+# Menú principal
+def menu():
+    while True:
+        print("\n=== GESTIÓN DE SOLICITUDES RESIDENCIA ===")
+        print("1. Registrar nuevo solicitante")
+        print("2. Buscar solicitante")
+        print("3. Crear reserva para solicitante")
+        print("4. Mostrar todos los solicitantes")
+        print("5. Mostrar reservas de un solicitante")
+        print("6. Resumen de solicitudes y reservas")
+        print("7. Salir")
+
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == '1':
+            registrar_solicitante()
+        elif opcion == '2':
+            buscar_solicitante()
+        elif opcion == '3':
+            crear_reserva()
+        elif opcion == '4':
+            mostrar_solicitantes()
+        elif opcion == '5':
+            mostrar_reservas()
+        elif opcion == '6':
+            resumen()
+        elif opcion == '7':
+            print("Saliendo del sistema. ¡Hasta luego!")
+            break
+        else:
+            print("Opción no válida. Intente nuevamente.")
+
+# Iniciar el sistema
+menu()
 
