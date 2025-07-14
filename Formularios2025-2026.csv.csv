@@ -1,0 +1,15 @@
+Nombre,Apellido,Fecha de nacimiento,Género,DNI/Pasaporte,Dirección,País,Código Postal,Provincia,Localidad,Teléfono,Teléfono de Urgencias,Correo Electrónico,Mes de Llegada,Mes de Salida,Estudios que realizarás,Universidad o centro,Curso
+Chloe,Dubois,29/7/1999,Femenino,FR112233445,2 Rue de Rivoli,Francia,075004,Ile de France,Paris,671134628,698574123,chloe.dubois@ejemplp.com,SEPTIEMBRE,AGOSTO,Máster Data Science - IA,ESADE,2025/2026
+John,Perez,8/1/1995,Masculino,21456987D,Fleming,Argentina,5501,Mendoza,Godoy Cruz,154718085,156407511,lopezpjohn@ejemplo.com,OCTUBRE,JUNIO,Grado en Sonología,UB,2025/2026
+Raúl,Sosa,11/3/1998,Masculino,AD4554215,Cortázar,Portugal,01221,Lisboa,Lisboa,478514125,4785542125,raul.sosa@ejemplo.com,SEPTIEMBRE,AGOSTO,Licenciatura en Psicología,UB,2025/2026
+Josefa,García,2/8/1996,Femenino,ER4885451,Plaza España,España,75510,Almería,Almería,689541225,687456123,josefa.dominguez@ejemplo.com,SEPTIEMBRE,OCTUBRE,Máster Arquitectura paisajística,ETSAB,2025/2026
+Luis,Suarez,15/3/2000,Masculino,Y7890123L,Provenza 123,España,08036,Barcelona,Barcelona,601234568,601234567,luis.suarez@ejemplo.com,SEPTIEMBRE,JUNIO,Grado en Ingeniería Informática,UPC,2025/2026
+Kenya,Tanaka,11/2/2002,Femenino,JP123456789,Aragó 789,España,08013,Barcelona,Barcelona,698551454,603456781,kenya.tanaka@ejemplo.com,OCTUBRE,JULIO,Grado en Administración y Dirección de Empresas,ESADE,2025/2026
+Sofia,Garcia,22/7/2001,Femenino,X123456789M,Gran Vía de Les Corts Catalanes 456,España,08015,Barcelona,Barcelona,606789101,605678911,sofi.garcia@ejemplo.com,SEPTIEMBRE,JUNIO,Grado en Nutrición Humana y Dietétoca,URL,2025/2026
+Diego,Morales,28/6/1998,Masculino,MX54565456,Avenida Paseo de la Reforma 22,México,06600,Ciudad de México,Cuauhtémoc,535656865,627455688,diego.morales@ejemplo.com,SEPTIEMBRE,AGOSTO,Grado en Medicina,UB,2025/2026
+Anya,Sharma,3/9/2001,Femenino,IN334455667,"28 Barakhamba Rd, Connaught Place",India,01101,Delhi,New Delhi,626112233,623344556,anya.sharma@ejemplo.com,OCTUBRE,FEBRERO,Grado en Diseño de Moda,IET,2025/2026
+Whei,Lin,14/6/1998,Masculino,CN556677889,"2 Fuxingmen South Street, Xicheng District",China,100810,Beijing,Beijing,566966566,577889910,whei.lin@ejemplo.com,SEPTIEMBRE,AGOSTO,Grado en Ingeniería Industrial,UPC,2025/2026
+Giuseppe,Lombardi,11/3/1994,Masculino,IT5689562455,"Via del Corso 32, Roma",Italia,00186,Lazio,Roma,644556678,6344556689,giuseppe.lombardi@ejemplo.com,SEPTIEMBRE,JULIO,Grado en Ciencias Culinarias,CETT,2025/2026
+Ali,Hassan,25/9/2003,Masculino,EG123456789,"1 AI-Azhar, Cairo",Egipto,11511,Cairo Governorate,Cairo,635001122,635002345,ali.hassan@ejemplo.com,SEPTIEMBRE,AGOSTO,Máster en Arquelogía,UB,2025/2026
+Johan,Svensson,31/7/1995,Masculino,SE667788991,"Kungsgatan 60, Stockholm",Suecia,11135,Stockholm,Stockholm,637445566,637112233,johan.svensson@ejemplo.com,SEPTIEMBRE,JUNIO,Diseño Web,UPC,2025/2026
+Ben,Carter,4/4/1996,Masculino,AU223344553,"200 George Street, Sydney NSW",Australia,2000,New South Wales,Sydney,639889002,639889003,ben.carter@ejemplo.com,SEPTIEMBRE,AGOSTO,Grado en Marketing Digital,ESADE,2025/2026
